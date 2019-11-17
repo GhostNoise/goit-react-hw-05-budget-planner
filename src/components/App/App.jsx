@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Container from './App.module';
 
-import BudgetFormContainer from '../BudgetForm/BudgetForm';
+import BudgetFormContainer from '../BudgetForm/BudgetFormContainer';
 import ValuesContainer from '../Values/ValuesContainer';
 import ExpenseFormContainer from '../ExpenseForm/ExpenseFormContainer';
 import ExpensesTableContainer from '../ExpensesTable/ExpensesTableContainer';
