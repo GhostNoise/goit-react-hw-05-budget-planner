@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 import Form from '../helpers/Form/Form';
 import Label from '../helpers/Label/Label';
 import Input from '../helpers/Input/Input';
@@ -28,10 +29,16 @@ export default class ExpenseForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { newExpense } = this.props;
-
-    newExpense({
-      ...this.state,
-    });
+    const { name, amount } = this.state;
+    if (!name || !amount) {
+      toast.warn('Please, enter a value in all fields');
+    } else if (Number(amount) <= 0) {
+      toast.warn('Please, enter valid amount');
+    } else {
+      newExpense({
+        ...this.state,
+      });
+    }
 
     this.setState({ name: '', amount: '' });
   };

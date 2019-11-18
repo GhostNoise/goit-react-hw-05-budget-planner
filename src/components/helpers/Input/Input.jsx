@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import StyledInput from './Input.module';
 
 const Input = ({
-  type = ' text',
+  type = '',
   value = '',
   onChange = () => null,
   name = '',

@@ -1,4 +1,7 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import PropTypes from 'prop-types';
 import Container from './App.module';
 
@@ -14,6 +17,17 @@ const App = ({ expenses }) => {
       <ValuesContainer />
       <ExpenseFormContainer />
       {expenses.length > 0 && <ExpensesTableContainer />}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnVisibilityChange={false}
+        draggable
+        pauseOnHover
+      />
     </Container>
   );
 };

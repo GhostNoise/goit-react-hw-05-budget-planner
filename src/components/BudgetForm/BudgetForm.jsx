@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
+
 import Form from '../helpers/Form/Form';
 import Label from '../helpers/Label/Label';
 import Input from '../helpers/Input/Input';
@@ -27,7 +29,11 @@ class BudgetForm extends Component {
     const { budget } = this.state;
     const { setBudget } = this.props;
 
-    setBudget(budget);
+    if (Number(budget) <= 0 || !budget) {
+      toast.error('Please, enter your budget!');
+    } else {
+      setBudget(budget);
+    }
 
     this.setState({ budget: '' });
   };
